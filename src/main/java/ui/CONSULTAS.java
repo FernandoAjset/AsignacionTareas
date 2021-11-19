@@ -32,7 +32,8 @@ public class CONSULTAS extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         habilitarPermisos();
         cargarComboBox();
-        PANEL1.setVisible(true);
+        tablaTareas.setVisible(true);
+        tablaTareasJS.setVisible(true);
         PANEL2.setVisible(false);
         PANEL3.setVisible(false);
         PANEL4.setVisible(false);
@@ -67,18 +68,17 @@ public class CONSULTAS extends javax.swing.JFrame {
         nombreuser = new javax.swing.JLabel();
         tareaspordia = new javax.swing.JButton();
         tareaspormes = new javax.swing.JButton();
-        PANEL1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaTareasJS = new javax.swing.JScrollPane();
         tablaTareas = new javax.swing.JTable();
+        PANEL4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        matrizpormes = new javax.swing.JTable();
         PANEL2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaMax = new javax.swing.JTable();
         PANEL3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         matrizpordias = new javax.swing.JTable();
-        PANEL4 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        matrizpormes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(974, 700));
@@ -190,10 +190,6 @@ public class CONSULTAS extends javax.swing.JFrame {
         });
         getContentPane().add(tareaspormes, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 220, -1));
 
-        jScrollPane1.setMaximumSize(new java.awt.Dimension(750, 350));
-        jScrollPane1.setMinimumSize(new java.awt.Dimension(750, 350));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(750, 300));
-
         tablaTareas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -202,17 +198,35 @@ public class CONSULTAS extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID TAREA", "DESCRIPCION", "USUARIO", "FECHA DE ASIGNACION", "ESTADO"
+                "ID TAREA", "DESCRIPCION", "USUARIO ASIGNADO", "FECHA ASIGNACION", "ESTADO"
             }
         ));
-        tablaTareas.setMaximumSize(new java.awt.Dimension(800, 240));
-        tablaTareas.setMinimumSize(new java.awt.Dimension(800, 240));
-        tablaTareas.setPreferredSize(new java.awt.Dimension(800, 300));
-        jScrollPane1.setViewportView(tablaTareas);
+        tablaTareasJS.setViewportView(tablaTareas);
 
-        PANEL1.add(jScrollPane1);
+        getContentPane().add(tablaTareasJS, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 270, 810, 170));
 
-        getContentPane().add(PANEL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 890, 320));
+        jScrollPane4.setMinimumSize(new java.awt.Dimension(800, 170));
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(800, 170));
+
+        matrizpormes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID USUARIO", "USUARIO", "DEPARTAMENTO", "HACE 1 MES", "HACE 2 MESES", "HACE 3 MESES"
+            }
+        ));
+        matrizpormes.setMaximumSize(new java.awt.Dimension(930, 170));
+        matrizpormes.setMinimumSize(new java.awt.Dimension(930, 170));
+        matrizpormes.setPreferredSize(new java.awt.Dimension(930, 170));
+        jScrollPane4.setViewportView(matrizpormes);
+
+        PANEL4.add(jScrollPane4);
+
+        getContentPane().add(PANEL4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 940, 170));
 
         tablaMax.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -230,7 +244,7 @@ public class CONSULTAS extends javax.swing.JFrame {
 
         PANEL2.add(jScrollPane2);
 
-        getContentPane().add(PANEL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 270, 780, 170));
+        getContentPane().add(PANEL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 270, 880, 170));
 
         jScrollPane3.setMinimumSize(new java.awt.Dimension(800, 170));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(800, 170));
@@ -259,29 +273,6 @@ public class CONSULTAS extends javax.swing.JFrame {
         PANEL3.add(jScrollPane3);
 
         getContentPane().add(PANEL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 940, 170));
-
-        jScrollPane4.setMinimumSize(new java.awt.Dimension(800, 170));
-        jScrollPane4.setPreferredSize(new java.awt.Dimension(800, 170));
-
-        matrizpormes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID USUARIO", "USUARIO", "DEPARTAMENTO", "HACE 1 MES", "HACE 2 MESES", "HACE 3 MESES"
-            }
-        ));
-        matrizpormes.setMaximumSize(new java.awt.Dimension(930, 170));
-        matrizpormes.setMinimumSize(new java.awt.Dimension(930, 170));
-        matrizpormes.setPreferredSize(new java.awt.Dimension(930, 170));
-        jScrollPane4.setViewportView(matrizpormes);
-
-        PANEL4.add(jScrollPane4);
-
-        getContentPane().add(PANEL4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 940, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -348,7 +339,8 @@ public class CONSULTAS extends javax.swing.JFrame {
         comboDepas.setEnabled(true);
         comboUsuarios.setEnabled(false);
         comboMax.setEnabled(false);
-        PANEL1.setVisible(true);
+        tablaTareas.setVisible(true);
+        tablaTareasJS.setVisible(true);
         PANEL2.setVisible(false);
         PANEL3.setVisible(false);
         PANEL4.setVisible(false);
@@ -361,7 +353,8 @@ public class CONSULTAS extends javax.swing.JFrame {
         comboDepas.setEnabled(false);
         comboUsuarios.setEnabled(true);
         comboMax.setEnabled(false);
-        PANEL1.setVisible(true);
+        tablaTareas.setVisible(true);
+        tablaTareasJS.setVisible(true);
         PANEL2.setVisible(false);
         PANEL3.setVisible(false);
         PANEL4.setVisible(false);
@@ -377,7 +370,8 @@ public class CONSULTAS extends javax.swing.JFrame {
         comboUsuarios.setEnabled(false);
         comboMax.setEnabled(true);
         PANEL2.setVisible(true);
-        PANEL1.setVisible(false);
+        tablaTareas.setVisible(false);
+        tablaTareasJS.setVisible(false);
         PANEL3.setVisible(false);
         PANEL4.setVisible(false);
         mAnuncioTareas.setText("");
@@ -389,7 +383,8 @@ public class CONSULTAS extends javax.swing.JFrame {
         comboMax.setEnabled(false);
         cargarComboBox();
         cargarMisTareas();
-        PANEL1.setVisible(true);
+        tablaTareas.setVisible(true);
+        tablaTareasJS.setVisible(true);
         PANEL2.setVisible(false);
         PANEL3.setVisible(false);
         mAnuncioTareas.setText("TAREAS ENCONTRADAS");
@@ -432,7 +427,8 @@ public class CONSULTAS extends javax.swing.JFrame {
 
     private void tareaspordiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tareaspordiaActionPerformed
         cargarComboBox();
-        PANEL1.setVisible(false);
+        tablaTareas.setVisible(false);
+        tablaTareasJS.setVisible(false);
         PANEL2.setVisible(false);
         PANEL4.setVisible(false);
         PANEL3.setVisible(true);
@@ -448,7 +444,8 @@ public class CONSULTAS extends javax.swing.JFrame {
 
     private void tareaspormesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tareaspormesActionPerformed
         cargarComboBox();
-        PANEL1.setVisible(false);
+        tablaTareas.setVisible(false);
+        tablaTareasJS.setVisible(false);
         PANEL2.setVisible(false);
         PANEL3.setVisible(false);
         PANEL4.setVisible(true);
@@ -498,7 +495,6 @@ public class CONSULTAS extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PANEL1;
     private javax.swing.JPanel PANEL2;
     private javax.swing.JPanel PANEL3;
     private javax.swing.JPanel PANEL4;
@@ -513,7 +509,6 @@ public class CONSULTAS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -524,6 +519,7 @@ public class CONSULTAS extends javax.swing.JFrame {
     private javax.swing.JLabel nombreuser;
     private javax.swing.JTable tablaMax;
     private javax.swing.JTable tablaTareas;
+    private javax.swing.JScrollPane tablaTareasJS;
     private javax.swing.JButton tareaspordia;
     private javax.swing.JButton tareaspormes;
     private javax.swing.JLabel tipouser;

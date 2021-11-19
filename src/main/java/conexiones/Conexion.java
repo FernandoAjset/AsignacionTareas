@@ -14,8 +14,11 @@ import org.apache.commons.dbcp2.BasicDataSource;
 public class Conexion {
 
     private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+    
+    //CREDENCIALES DEL USUARIO ORACLE, NO TIENE RELACION CON LOS USUARIOS CREADOS EN EL CATALOGO DE LA BD (TABLA USUARIOS) 
     private static final String JDBC_USER = "ADMIN_DBA";
     private static final String JDBC_PASS = "umg2021";
+    
     private static Connection conne = null;
     private static BasicDataSource ds = new BasicDataSource();
 

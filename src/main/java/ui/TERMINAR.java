@@ -87,7 +87,7 @@ public class TERMINAR extends javax.swing.JFrame {
 
         tareaSelec.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         tareaSelec.setForeground(new java.awt.Color(51, 51, 255));
-        getContentPane().add(tareaSelec, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 390, 20));
+        getContentPane().add(tareaSelec, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 530, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
