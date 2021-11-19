@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
+import javax.swing.JOptionPane;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 /**
@@ -27,12 +28,14 @@ public class Conexion {
         return ds;
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conne = getDataSource().getConnection();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showConfirmDialog(null, "Falla del Driver", "Problema de conexion", JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Credenciales principales incorrectas", "Acceso Denegado", JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
         }
         return conne;
     }
