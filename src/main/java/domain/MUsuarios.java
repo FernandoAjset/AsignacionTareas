@@ -74,7 +74,6 @@ public class MUsuarios {
                 Conexion.close(rs);
                 Conexion.close(ps);
                 Conexion.close(conexion);
-                conexion.close();
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }

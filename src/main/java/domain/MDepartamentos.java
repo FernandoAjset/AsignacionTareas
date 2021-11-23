@@ -39,6 +39,7 @@ public class MDepartamentos {
         this.nombre = nombre;
     }
 
+    @Override
     public String toString() {
         return this.nombre;
     }

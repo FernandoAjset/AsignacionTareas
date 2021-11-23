@@ -1,8 +1,6 @@
 package conexiones;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.sql.DataSource;
 import javax.swing.JOptionPane;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -20,7 +18,7 @@ public class Conexion {
     private static final String JDBC_PASS = "umg2021";
     
     private static Connection conne = null;
-    private static BasicDataSource ds = new BasicDataSource();
+    private static final BasicDataSource ds = new BasicDataSource();
 
     public static DataSource getDataSource() {
 
